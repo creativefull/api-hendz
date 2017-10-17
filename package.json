@@ -1,0 +1,18 @@
+{
+  "name": "api-fintech-mysql",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Shodiqul Muzaki <mshodiqul@gmail.com> (http://creativefull.cf)",
+  "license": "ISC",
+  "dependencies": {
+    "cron": "^1.3.0",
+    "moment": "^2.18.1",
+    "mysql": "^2.15.0",
+    "request": "^2.83.0",
+    "simple-xmpp": "^1.3.0"
+  }
+}

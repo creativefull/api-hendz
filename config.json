@@ -1,0 +1,11 @@
+{
+	"database" : {
+		"host" : "45.32.115.158",
+		"user" : "server_pulsa",
+		"password" : "22/7*r*r",
+		"database" : "server_pulsa"
+	},
+	"app" : {
+		"port" : "8089"
+	}
+}
