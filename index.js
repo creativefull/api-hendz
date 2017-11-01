@@ -5,7 +5,8 @@ const config = require('./config.json')
 const {createConnection} = require('mysql')
 const numCPUs = require('os').cpus().length
 const xmpp = require('simple-xmpp')
-const app = require('express')()
+const express = require('express')
+const app = express()
 const http = require('http').createServer(app)
 const io = require('socket.io')(http)
 
@@ -36,5 +37,11 @@ new CronJob('* * * * * *', () => {
 // RECEIVE CHAT
 require('./lib/receiveChat')
 
+// EXPRESS STATIC
+app.use(express.static('front-dev'))
+// ROUTE HTTP
+app.get('/', async (req,res) => {
+	res.sendFile(__dirname + '/front-dev/index.html')
+})
 // RUN CLUSTER PROCESS
 http.listen(8089, () => console.log("Application running on port", 8089))
