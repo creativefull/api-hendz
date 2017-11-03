@@ -24,6 +24,12 @@ jabber.connect()
 io.on('connection', (socket) => {
 	global.socket = socket
 	console.log("User connected")
+	socket.emit('connected', 'connected')
+	
+	// ON SEND MESSAGE
+	socket.on('send_message', (data) => {
+		xmpp.send(data.id_jabber, data.message)		
+	})
 })
 
 const {startPool} = require('./lib/pool')
